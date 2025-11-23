@@ -37,6 +37,33 @@
             background: #3b82f6;
             border-radius: 5px;
         }
+
+        /* Nuevo estilo para el placeholder del número */
+        .project-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #1e293b;
+            /* Slate 800 un poco más oscuro */
+            color: #475569;
+            /* Slate 600 para el número */
+            font-size: 5rem;
+            font-weight: bold;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+            z-index: 5;
+        }
+
+        .project-placeholder.has-image {
+            opacity: 0;
+            z-index: 1;
+            /* Asegura que no estorbe si la imagen se carga */
+        }
     </style>
 </head>
 
@@ -143,16 +170,17 @@
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-                <!-- Asignación 1 -->
                 <article
                     class="group bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-primary transition-all duration-300 hover:-translate-y-2 shadow-xl"
                     data-aos="flip-left">
-                    <div class="relative overflow-hidden h-48">
+                    <div class="relative overflow-hidden h-48 bg-slate-700">
+                        <div class="project-placeholder">1</div>
                         <img src="img/proyecto1.png" alt="Tarea 1"
-                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500 relative z-10"
+                            onerror="this.style.opacity='0'; this.previousElementSibling.classList.remove('has-image');">
                         <div
-                            class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <span class="text-white font-bold">Ver Detalles</span>
+                            class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-20">
+                            <span class="text-white font-bold">Descargar</span>
                         </div>
                     </div>
                     <div class="p-6">
@@ -164,16 +192,9 @@
                             Asignación #1</h3>
                         <p class="text-slate-400 text-sm mb-4">Descripción técnica de la tarea. Explica brevemente el
                             patrón de diseño o lógica utilizada.</p>
-                        <a href="#"
-                            class="inline-flex items-center text-primary hover:text-white transition-colors font-medium text-sm">
-                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                            </svg>
-                        </a>
                         <a href="asignaciones/tarea1/Investigación 1 DSW4 (Carlos Miranda y Brayan Quintero).pdf"
                             download
-                            class="inline-flex items-center text-primary hover:text-white transition-colors font-medium text-sm ml-4">
+                            class="inline-flex items-center text-primary hover:text-white transition-colors font-medium text-sm">
                             Descargar <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
@@ -182,13 +203,18 @@
                     </div>
                 </article>
 
-                <!-- Asignación 2 -->
                 <article
                     class="group bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-primary transition-all duration-300 hover:-translate-y-2 shadow-xl"
                     data-aos="flip-left" data-aos-delay="100">
-                    <div class="relative overflow-hidden h-48">
+                    <div class="relative overflow-hidden h-48 bg-slate-700">
+                        <div class="project-placeholder">2</div>
                         <img src="img/proyecto2.png" alt="Tarea 2"
-                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500 relative z-10"
+                            onerror="this.style.opacity='0'; this.previousElementSibling.classList.remove('has-image');">
+                        <div
+                            class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-20">
+                            <span class="text-white font-bold">Descargar</span>
+                        </div>
                     </div>
                     <div class="p-6">
                         <div class="flex justify-between items-center mb-3">
@@ -199,15 +225,8 @@
                             Asignación #2</h3>
                         <p class="text-slate-400 text-sm mb-4">Implementación de interfaz gráfica y conexión a base de
                             datos.</p>
-                        <a href="#"
-                            class="inline-flex items-center text-primary hover:text-white transition-colors font-medium text-sm">
-                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                            </svg>
-                        </a>
                         <a href="asignaciones/tarea2/Taller1.rar" download
-                            class="inline-flex items-center text-primary hover:text-white transition-colors font-medium text-sm ml-4">
+                            class="inline-flex items-center text-primary hover:text-white transition-colors font-medium text-sm">
                             Descargar <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
@@ -216,16 +235,17 @@
                     </div>
                 </article>
 
-                <!-- Asignación 3 -->
                 <article
                     class="group bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-primary transition-all duration-300 hover:-translate-y-2 shadow-xl"
                     data-aos="flip-left" data-aos-delay="200">
-                    <div class="relative overflow-hidden h-48">
-                        <img src="img/proyecto1.png" alt="Tarea 3"
-                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <div class="relative overflow-hidden h-48 bg-slate-700">
+                        <div class="project-placeholder">3</div>
+                        <img src="img/proyecto3.png" alt="Tarea 3"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500 relative z-10"
+                            onerror="this.style.opacity='0'; this.previousElementSibling.classList.remove('has-image');">
                         <div
-                            class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <span class="text-white font-bold"></span>
+                            class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-20">
+                            <span class="text-white font-bold">Descargar</span>
                         </div>
                     </div>
                     <div class="p-6">
@@ -236,15 +256,8 @@
                         <h3 class="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
                             Asignación #3</h3>
                         <p class="text-slate-400 text-sm mb-4">Descripción breve de la asignación #3.</p>
-                        <a href="#"
-                            class="inline-flex items-center text-primary hover:text-white transition-colors font-medium text-sm">
-                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                            </svg>
-                        </a>
                         <a href="asignaciones/tarea3/municipio_alanje.rar" download
-                            class="inline-flex items-center text-primary hover:text-white transition-colors font-medium text-sm ml-4">
+                            class="inline-flex items-center text-primary hover:text-white transition-colors font-medium text-sm">
                             Descargar <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
@@ -253,16 +266,17 @@
                     </div>
                 </article>
 
-                <!-- Asignación 4 -->
                 <article
                     class="group bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-primary transition-all duration-300 hover:-translate-y-2 shadow-xl"
                     data-aos="flip-left" data-aos-delay="300">
-                    <div class="relative overflow-hidden h-48">
-                        <img src="img/proyecto1.png" alt="Tarea 4"
-                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <div class="relative overflow-hidden h-48 bg-slate-700">
+                        <div class="project-placeholder">4</div>
+                        <img src="img/proyecto4.png" alt="Tarea 4"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500 relative z-10"
+                            onerror="this.style.opacity='0'; this.previousElementSibling.classList.remove('has-image');">
                         <div
-                            class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <span class="text-white font-bold"></span>
+                            class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-20">
+                            <span class="text-white font-bold">Descargar</span>
                         </div>
                     </div>
                     <div class="p-6">
@@ -273,15 +287,8 @@
                         <h3 class="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
                             Asignación #4</h3>
                         <p class="text-slate-400 text-sm mb-4">Descripción breve de la asignación #4.</p>
-                        <a href="#"
-                            class="inline-flex items-center text-primary hover:text-white transition-colors font-medium text-sm">
-                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                            </svg>
-                        </a>
                         <a href="asignaciones/tarea4/Laboratorio 4.rar" download
-                            class="inline-flex items-center text-primary hover:text-white transition-colors font-medium text-sm ml-4">
+                            class="inline-flex items-center text-primary hover:text-white transition-colors font-medium text-sm">
                             Descargar <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
@@ -290,16 +297,17 @@
                     </div>
                 </article>
 
-                <!-- Asignación 5 -->
                 <article
                     class="group bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-primary transition-all duration-300 hover:-translate-y-2 shadow-xl"
                     data-aos="flip-left">
-                    <div class="relative overflow-hidden h-48">
-                        <img src="img/proyecto1.png" alt="Tarea 5"
-                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <div class="relative overflow-hidden h-48 bg-slate-700">
+                        <div class="project-placeholder">5</div>
+                        <img src="img/proyecto5.png" alt="Tarea 5"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500 relative z-10"
+                            onerror="this.style.opacity='0'; this.previousElementSibling.classList.remove('has-image');">
                         <div
-                            class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <span class="text-white font-bold"></span>
+                            class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-20">
+                            <span class="text-white font-bold">Descargar</span>
                         </div>
                     </div>
                     <div class="p-6">
@@ -310,15 +318,8 @@
                         <h3 class="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
                             Asignación #5</h3>
                         <p class="text-slate-400 text-sm mb-4">Descripción breve de la asignación #5.</p>
-                        <a href="#"
-                            class="inline-flex items-center text-primary hover:text-white transition-colors font-medium text-sm">
-                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                            </svg>
-                        </a>
                         <a href="asignaciones/tarea5/parcial 1.pdf" download
-                            class="inline-flex items-center text-primary hover:text-white transition-colors font-medium text-sm ml-4">
+                            class="inline-flex items-center text-primary hover:text-white transition-colors font-medium text-sm">
                             Descargar <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
@@ -327,16 +328,17 @@
                     </div>
                 </article>
 
-                <!-- Asignación 6 -->
                 <article
                     class="group bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-primary transition-all duration-300 hover:-translate-y-2 shadow-xl"
                     data-aos="flip-left" data-aos-delay="100">
-                    <div class="relative overflow-hidden h-48">
-                        <img src="img/proyecto1.png" alt="Tarea 6"
-                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <div class="relative overflow-hidden h-48 bg-slate-700">
+                        <div class="project-placeholder">6</div>
+                        <img src="img/proyecto6.png" alt="Tarea 6"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500 relative z-10"
+                            onerror="this.style.opacity='0'; this.previousElementSibling.classList.remove('has-image');">
                         <div
-                            class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <span class="text-white font-bold"></span>
+                            class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-20">
+                            <span class="text-white font-bold">Descargar</span>
                         </div>
                     </div>
                     <div class="p-6">
@@ -347,15 +349,8 @@
                         <h3 class="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
                             Asignación #6</h3>
                         <p class="text-slate-400 text-sm mb-4">Descripción breve de la asignación #6.</p>
-                        <a href="#"
-                            class="inline-flex items-center text-primary hover:text-white transition-colors font-medium text-sm">
-                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                            </svg>
-                        </a>
                         <a href="asignaciones/tarea6/ejercicio_practico_1.rar" download
-                            class="inline-flex items-center text-primary hover:text-white transition-colors font-medium text-sm ml-4">
+                            class="inline-flex items-center text-primary hover:text-white transition-colors font-medium text-sm">
                             Descargar <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
@@ -364,16 +359,17 @@
                     </div>
                 </article>
 
-                <!-- Asignación 7 -->
                 <article
                     class="group bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-primary transition-all duration-300 hover:-translate-y-2 shadow-xl"
                     data-aos="flip-left" data-aos-delay="200">
-                    <div class="relative overflow-hidden h-48">
-                        <img src="img/proyecto1.png" alt="Tarea 7"
-                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <div class="relative overflow-hidden h-48 bg-slate-700">
+                        <div class="project-placeholder">7</div>
+                        <img src="img/proyecto7.png" alt="Tarea 7"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500 relative z-10"
+                            onerror="this.style.opacity='0'; this.previousElementSibling.classList.remove('has-image');">
                         <div
-                            class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <span class="text-white font-bold"></span>
+                            class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-20">
+                            <span class="text-white font-bold">Descargar</span>
                         </div>
                     </div>
                     <div class="p-6">
@@ -384,15 +380,8 @@
                         <h3 class="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
                             Asignación #7</h3>
                         <p class="text-slate-400 text-sm mb-4">Descripción breve de la asignación #7.</p>
-                        <a href="#"
-                            class="inline-flex items-center text-primary hover:text-white transition-colors font-medium text-sm">
-                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                            </svg>
-                        </a>
                         <a href="asignaciones/tarea7/investigacion 3.pptx" download
-                            class="inline-flex items-center text-primary hover:text-white transition-colors font-medium text-sm ml-4">
+                            class="inline-flex items-center text-primary hover:text-white transition-colors font-medium text-sm">
                             Descargar <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
@@ -401,16 +390,17 @@
                     </div>
                 </article>
 
-                <!-- Asignación 8 -->
                 <article
                     class="group bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-primary transition-all duration-300 hover:-translate-y-2 shadow-xl"
                     data-aos="flip-left" data-aos-delay="300">
-                    <div class="relative overflow-hidden h-48">
-                        <img src="img/proyecto1.png" alt="Tarea 8"
-                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <div class="relative overflow-hidden h-48 bg-slate-700">
+                        <div class="project-placeholder">8</div>
+                        <img src="img/proyecto8.png" alt="Tarea 8"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500 relative z-10"
+                            onerror="this.style.opacity='0'; this.previousElementSibling.classList.remove('has-image');">
                         <div
-                            class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <span class="text-white font-bold">Ver Detalles</span>
+                            class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-20">
+                            <span class="text-white font-bold">Descargar</span>
                         </div>
                     </div>
                     <div class="p-6">
@@ -421,15 +411,8 @@
                         <h3 class="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
                             Asignación #8</h3>
                         <p class="text-slate-400 text-sm mb-4">Descripción breve de la asignación #8.</p>
-                        <a href="#"
-                            class="inline-flex items-center text-primary hover:text-white transition-colors font-medium text-sm">
-                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                            </svg>
-                        </a>
                         <a href="asignaciones/tarea8/Taller 3.rar" download
-                            class="inline-flex items-center text-primary hover:text-white transition-colors font-medium text-sm ml-4">
+                            class="inline-flex items-center text-primary hover:text-white transition-colors font-medium text-sm">
                             Descargar <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
@@ -438,16 +421,17 @@
                     </div>
                 </article>
 
-                <!-- Asignación 9 -->
                 <article
                     class="group bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-primary transition-all duration-300 hover:-translate-y-2 shadow-xl"
                     data-aos="flip-left">
-                    <div class="relative overflow-hidden h-48">
-                        <img src="img/proyecto1.png" alt="Tarea 9"
-                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <div class="relative overflow-hidden h-48 bg-slate-700">
+                        <div class="project-placeholder">9</div>
+                        <img src="img/proyecto9.png" alt="Tarea 9"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500 relative z-10"
+                            onerror="this.style.opacity='0'; this.previousElementSibling.classList.remove('has-image');">
                         <div
-                            class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <span class="text-white font-bold">Ver Detalles</span>
+                            class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-20">
+                            <span class="text-white font-bold">Descargar</span>
                         </div>
                     </div>
                     <div class="p-6">
@@ -458,15 +442,8 @@
                         <h3 class="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
                             Asignación #9</h3>
                         <p class="text-slate-400 text-sm mb-4">Descripción breve de la asignación #9.</p>
-                        <a href="#"
-                            class="inline-flex items-center text-primary hover:text-white transition-colors font-medium text-sm">
-                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                            </svg>
-                        </a>
                         <a href="asignaciones/tarea9/nibarra-maintenance (2).rar" download
-                            class="inline-flex items-center text-primary hover:text-white transition-colors font-medium text-sm ml-4">
+                            class="inline-flex items-center text-primary hover:text-white transition-colors font-medium text-sm">
                             Descargar <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
@@ -516,6 +493,29 @@
             ease: "none",
             delay: 0.5
         });
+
+        // Lógica de JavaScript para el placeholder (ajuste: añadir 'has-image' si la imagen se carga correctamente)
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('#asignaciones img').forEach(img => {
+                const placeholder = img.previousElementSibling;
+                if (img.complete && img.naturalHeight !== 0) {
+                    // La imagen ya se cargó y fue exitosa
+                    placeholder.classList.add('has-image');
+                } else if (!img.complete) {
+                    // Esperar a que la imagen cargue
+                    img.addEventListener('load', () => {
+                        placeholder.classList.add('has-image');
+                    });
+                    img.addEventListener('error', () => {
+                        // Si la imagen falla, el código en el onerror del HTML la ocultará y mostrará el número
+                    });
+                } else if (img.naturalHeight === 0) {
+                    // Si la imagen ya se cargó pero falló (p. ej., 404),
+                    // el atributo onerror en el HTML (this.style.opacity='0';) manejará el ocultamiento
+                }
+            });
+        });
+
     </script>
 
 </body>
